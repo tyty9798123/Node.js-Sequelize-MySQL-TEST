@@ -51,3 +51,11 @@ User.init({
 
 
 sequelize.sync({ force: false }) ;
+
+// Create Data in User
+sequelize.sync().then( () => {
+    return User.create({
+        firstName: "John",
+        lastName: "Hancock",
+    })
+})
